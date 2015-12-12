@@ -1,0 +1,21 @@
+{
+	"name": "language-opensips",
+	"version": "0.0.1",
+	"description": "Syntax highlighting for OpenSIPs",
+	"keywords": [
+		"atom",
+		"syntax-highlighting",
+		"opensips",
+		"language-opensips"
+	],
+	"author": "Tommy Brecher <brechertommy@gmail.com>",
+	"license": "GPLv2",
+	"engines": {
+		"atom": "*",
+		"node": "*"
+	},
+	"bugs": {
+	"url": "https://github.com/tommybrecher/language-opensips"
+	},
+	"homepage": "https://github.com/tommybrecher/language-opensips"
+}

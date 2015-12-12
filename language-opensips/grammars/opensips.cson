@@ -1,0 +1,145 @@
+'scopeName': 'source.opensips'
+'name': 'OpenSIPs'
+'fileTypes': [
+  'opensips.cfg'
+]
+'editor':
+  'commentStart': '# '
+'patterns': [
+	{
+		'comment': 'Line comment'
+		'begin': '\\#[^!]'
+		'end': '\\n'
+		'name': 'comment.line.number-sign.kamailio'
+	}
+	{
+		'comment': 'Line comment'
+		'begin': '//'
+		'end': '\\n'
+		'name': 'comment.line.double-slash.kamailio'
+	}
+	{
+		'comment': 'Block comment'
+		'begin': '/\\*'
+		'end': '\\*/'
+		'name': 'comment.block.kamailio'
+	}
+  {
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.double.opensips'
+  }
+  {
+    'match': '\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b'
+    'name': 'constant.numeric.opensips'
+  }
+  {
+    'comment': 'Main routing blocks with name'
+    'match': '\\b(route|branch_route|failure_route|onreply_route|event_route)\\s*\\[([^\\]]+)\\]'
+    'captures': {
+      '1': {
+        'name': 'entity.name.class.opensips'
+      },
+      '2': {
+        'name': 'constant.other.opensips'
+      }
+    }
+    'name': 'support.function.opensips'
+  }
+  {
+    'comment': 'Main routing blocks without name'
+    'match': '\\b(request_route|reply_route|onsend_route|startup_route|route)\\b'
+    'name': 'support.function.opensips'
+  }
+  {
+    'comment': 'Executing routing blocks with name'
+    'match': '\\b(route)\\s*\\(([^)]+)\\)'
+    'captures': {
+      '1': {
+        'name': 'keyword.source.opensips'
+      },
+      '2': {
+        'name': 'constant.other.opensips'
+      }
+    }
+    'name': 'support.function.opensips'
+  }
+  {
+    'match': '\\b(exit|return|drop|break|if|else|while|switch|case|default)\\b'
+    'name': 'keyword.control.conditional.opensips'
+  }
+  {
+    'match': '\\b(include_file|import_file)\\b'
+    'name': 'storage.type.primitive.opensips'
+  }
+  {
+    'match': '(\\#[!]|[!]{2})(include_file|import_file)\\b'
+    'name': 'storage.type.primitive.opensips'
+  }
+  {
+    'match': '(\\$)null\\b'
+    'name': 'constant.language.null.opensips'
+  }
+  {
+    'comment': 'variables with inner name and root parenthesis'
+    'match': '(\\$)\\([a-zA-Z0-9_]+\\(([a-zA-Z0-9_]+)\\)\\)'
+    'captures': {
+      '1': {
+        'name': 'support.variable.opensips'
+      },
+      '2': {
+        'name': 'constant.other.opensips'
+      }
+    }
+    'name': 'support.variable.opensips'
+  }
+  {
+    'comment': 'variables with inner name'
+    'match': '(\\$)[a-zA-Z0-9_]+\\(([a-zA-Z0-9_]+)\\)'
+    'captures': {
+      '1': {
+        'name': 'support.variable.opensips'
+      },
+      '2': {
+        'name': 'constant.other.opensips'
+      }
+    }
+    'name': 'support.variable.opensips'
+  }
+  {
+    'comment': 'variables with simple name and root parenthesis'
+    'match': '(\\$)\\([a-zA-Z0-9_]+\\)'
+    'name': 'support.variable.opensips'
+  }
+  {
+    'comment': 'variables with simple name'
+    'match': '(\\$)[a-zA-Z0-9_]+\\b'
+    'name': 'support.variable.opensips'
+  }
+  {
+    'match': '\\b(true|yes|on|enabled)\\b'
+    'name': 'constant.language.boolean.true.opensips'
+  }
+  {
+    'match': '\\b(false|no|off|disabled)\\b'
+    'name': 'constant.language.boolean.false.opensips'
+  }
+  {
+    'match': '\\b(loadmodule|modparam)\\b'
+    'name': 'keyword.source.opensips'
+  }
+  {
+    'comment': 'Core keyword variables'
+    'match': '\\b(af|dst_ip|dst_port|from_uri|method|msg:len|proto|status|snd_af|snd_ip|snd_port|snd_proto|src_ip|src_port|to_af|to_ip|to_port|to_proto|to_uri|uri|uri:host|uri:port)\\b'
+    'name': 'support.variable.opensips'
+  }
+  {
+    'comment': 'Core keyword values'
+    'match': '\\b(max_len|myself|udp|UDP|tcp|TCP|tls|TLS|sctp|SCTP|ws|WS|wss|WSS|inet|INET|inet6|INET6|sslv23|SSLv23|SSLV23|sslv2|SSLv2|SSLV2|sslv3|SSLv3|SSLV3|tlsv1|TLSv1|TLSV1|LOG_LOCAL[1-6])\\b'
+    'name': 'constant.language.opensips'
+  }
+  {
+    'match': '=|~|<|>|\\+|-|\\*|\\^|&|/|\\||!|\\b(?i:(mod|and|not|or|xor|defined|eq|ieq|ne|ine))\\b'
+    'name': 'keyword.operator.opensips'
+  }
+]

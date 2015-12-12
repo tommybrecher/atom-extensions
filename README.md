@@ -1,7 +1,10 @@
 # Atom Editor Extensions
 
-Various extensions for Atom editor (https://atom.io).
+Atom Syntax Highlighting for OpenSIPs
 
+ * Optimized for OpenSIPs rather than Kamailio
+ * Added support for comment with '#' sign
+ 
 ## Packages
 
-  * [Syntax Highlighting for Kamailio.cfg](https://github.com/miconda/atom-extensions/tree/master/language-kamailio)
+  * [Syntax Highlighting for opensips.cfg](https://github.com/tommybrecher/language-opensips)
