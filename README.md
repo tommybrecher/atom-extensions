@@ -7,7 +7,7 @@ Atom Syntax Highlighting for OpenSIPs
 
 Installation:
 
-Clone this repository inside your atom packages folder: ~/.atom/Packages and restart Atom
+Clone this repo inside ~/.atom/packages/ and restart Atom
 if you don't want to restart you can Command+Shift+P then type 'reload' -> select Window: Reload (or Ctrl+Shift+Command+L)
 when not editing a file named "opensips.cfg", Ctrl+Shift+L and type OpenSIPs
 fork of https://github.com/miconda/atom-extensions changed to fit OpenSIPs with slight amount of mods.
